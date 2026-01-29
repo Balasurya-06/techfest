@@ -35,15 +35,13 @@ const HeroSection = () => {
                 transition={{ duration: 0.8 }}
                 className="z-10 flex flex-col items-center"
             >
-                <div className="mb-6 relative w-32 h-32 md:w-40 md:h-40 group hover:scale-105 transition-transform duration-300">
-                    <a href="https://kahedu.edu.in" target="_blank" rel="noopener noreferrer">
-                        <Image
-                            src="/karpagam-logo.png"
-                            alt="Karpagam Academy Logo"
-                            fill
-                            className="object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] cursor-pointer"
-                        />
-                    </a>
+                <div className="mb-6 relative w-32 h-32 md:w-40 md:h-40">
+                    <Image
+                        src="/college-logo.png"
+                        alt="Karpagam Academy Logo"
+                        fill
+                        className="object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]"
+                    />
                 </div>
 
                 <h2 className="text-neon-green text-lg md:text-xl tracking-[0.2em] mb-4 font-bold">
