@@ -2,60 +2,52 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { eventsData } from '../data/eventsData';
 import EventDetailView from './EventDetailView';
+import { ArrowUpRight } from 'lucide-react';
 
 const EventGrid = () => {
     const [activeEvent, setActiveEvent] = useState<typeof eventsData[0] | null>(null);
 
     return (
-        <section id="events" className="py-20 px-4 relative min-h-screen flex flex-col justify-center">
-            <div className="max-w-7xl mx-auto w-full">
-                <AnimatePresence mode="wait">
-                    {!activeEvent ? (
+        <section id="events" className="py-32 px-4 relative bg-white">
+            <div className="w-4/5 mx-auto">
+                <div className="text-center mb-20">
+                    <span className="text-blue-600 font-bold tracking-widest uppercase text-sm">Our Events</span>
+                    <h2 className="text-5xl md:text-6xl font-black text-gray-900 mt-4">
+                        Event Categories
+                    </h2>
+                    <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+                        Explore our diverse range of technical and non-technical competitions
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+                    {eventsData.map((event, index) => (
                         <motion.div
-                            key="grid"
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
-                            transition={{ duration: 0.5 }}
+                            key={event.id}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            onClick={() => setActiveEvent(event)}
+                            className="group cursor-pointer border-b border-gray-200 pb-8 hover:border-blue-600 transition-colors"
                         >
-                            <h2 className="text-4xl md:text-5xl font-orbitron text-center mb-16 text-white uppercase tracking-wider relative inline-block left-1/2 -translate-x-1/2">
-                                <span className="relative z-10">Events</span>
-                                <div className="absolute -inset-2 bg-neon-green/20 blur-lg -skew-x-12 z-0" />
-                            </h2>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                                {eventsData.map((event, index) => (
-                                    <motion.div
-                                        key={event.id}
-                                        initial={{ opacity: 0, scale: 0.9 }}
-                                        whileInView={{ opacity: 1, scale: 1 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: index * 0.1 }}
-                                        whileHover={{ y: -5 }}
-                                        onClick={() => setActiveEvent(event)}
-                                        className="glass-card p-6 rounded-xl relative group overflow-hidden cursor-pointer"
-                                    >
-                                        <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${event.color} opacity-10 blur-2xl rounded-bl-full group-hover:opacity-20 transition-opacity`} />
-
-                                        <div className="mb-4 text-neon-green group-hover:text-white transition-colors duration-300">
-                                            <event.icon className="w-8 h-8" />
-                                        </div>
-
-                                        <h3 className="text-xl font-orbitron text-white mb-2 group-hover:text-neon-green transition-colors">
-                                            {event.title}
-                                        </h3>
-
-                                        <p className="text-gray-400 text-sm">
-                                            {event.description}
-                                        </p>
-
-                                        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-neon-green to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-                                    </motion.div>
-                                ))}
+                            <div className="flex items-start justify-between gap-4">
+                                <div className="flex-1">
+                                    <h4 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-3">
+                                        {event.title}
+                                    </h4>
+                                    <p className="text-gray-600 text-sm leading-relaxed mb-3 line-clamp-3">
+                                        {event.description}
+                                    </p>
+                                    <p className="text-blue-600 text-xs font-semibold italic">
+                                        {event.tagline}
+                                    </p>
+                                </div>
+                                <ArrowUpRight className="w-6 h-6 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all flex-shrink-0 mt-1" />
                             </div>
                         </motion.div>
-                    ) : null}
-                </AnimatePresence>
+                    ))}
+                </div>
 
                 <AnimatePresence>
                     {activeEvent && (
