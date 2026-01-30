@@ -6,13 +6,13 @@ const Footer = () => {
     return (
         <>
             {/* CTA Section */}
-            <section className="relative py-32 px-4 bg-black overflow-hidden">
+            <section className="relative py-32 bg-black overflow-hidden">
                 {/* Background Image Effect */}
                 <div className="absolute inset-0 opacity-20">
                     <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black"></div>
                 </div>
 
-                <div className="relative z-10 w-4/5 mx-auto text-center">
+                <div className="relative z-10 w-11/12 md:w-4/5 mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -44,8 +44,8 @@ const Footer = () => {
             </section>
 
             {/* Footer */}
-            <footer className="bg-black border-t border-gray-800 py-16 px-4">
-                <div className="w-4/5 mx-auto">
+            <footer className="bg-black border-t border-gray-800 py-16">
+                <div className="w-11/12 md:w-4/5 mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                         {/* Brand */}
                         <div className="md:col-span-1">

@@ -3,8 +3,8 @@ import { ArrowRight } from 'lucide-react';
 
 const WorkshopSpotlight = () => {
     return (
-        <section className="py-32 px-4 bg-gray-50">
-            <div className="w-4/5 mx-auto">
+        <section id="workshop" className="py-32 bg-gray-50">
+            <div className="w-11/12 md:w-4/5 mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     {/* Left Side - Label */}
                     <motion.div

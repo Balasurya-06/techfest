@@ -8,8 +8,8 @@ const EventGrid = () => {
     const [activeEvent, setActiveEvent] = useState<typeof eventsData[0] | null>(null);
 
     return (
-        <section id="events" className="py-32 px-4 relative bg-white">
-            <div className="w-4/5 mx-auto">
+        <section id="events" className="py-32 relative bg-white">
+            <div className="w-11/12 md:w-4/5 mx-auto">
                 <div className="text-center mb-20">
                     <span className="text-blue-600 font-bold tracking-widest uppercase text-sm">Our Events</span>
                     <h2 className="text-5xl md:text-6xl font-black text-gray-900 mt-4">

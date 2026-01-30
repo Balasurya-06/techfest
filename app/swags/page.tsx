@@ -31,7 +31,7 @@ export default function SwagsPage() {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-20">
-            <div className="w-4/5 mx-auto">
+            <div className="w-11/12 md:w-4/5 mx-auto">
                 <div className="text-center mb-12">
                     <h1 className="text-5xl md:text-7xl font-black text-white mb-4">
                         GENERATE YOUR PASS

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowDown } from 'lucide-react';
 
 const HeroSection = () => {
     const targetDate = new Date('2026-02-12T00:00:00');
@@ -26,8 +26,8 @@ const HeroSection = () => {
     }, []);
 
     return (
-        <section className="relative min-h-screen bg-white pt-32 pb-20 px-4 md:px-8 w-full">
-            <div className="w-4/5 mx-auto">
+        <section className="relative min-h-screen bg-white pt-32 pb-40 w-full">
+            <div className="w-11/12 md:w-4/5 mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left Content */}
                     <motion.div
@@ -72,7 +72,6 @@ const HeroSection = () => {
                         </p>
 
                         {/* CTA Button */}
-                        {/* CTA Button */}
                         <motion.a
                             href="https://docs.google.com/forms/d/1tsiLFyOveddLrO794Vqn5WqIdr2A-1GrGI8rC0A4_HM/viewform"
                             target="_blank"
@@ -109,9 +108,9 @@ const HeroSection = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="relative"
                     >
-                        {/* Category Badge */}
-                        <div className="absolute -top-6 right-32 z-20">
-                            <div className="bg-white rounded-2xl px-6 py-4 shadow-2xl border-2 border-gray-900">
+                        {/* Category Badge - Repositioned to avoid overlap */}
+                        <div className="absolute -top-12 -right-4 md:-right-8 z-20">
+                            <div className="bg-white rounded-2xl px-6 py-4 shadow-2xl border-2 border-gray-900 transform rotate-2">
                                 <p className="text-xs font-semibold text-gray-900 mb-3 text-center uppercase tracking-wider">Event Categories</p>
                                 <div className="flex gap-3">
                                     <div className="group relative">
@@ -131,8 +130,8 @@ const HeroSection = () => {
                             </div>
                         </div>
 
-                        {/* Ticket Card */}
-                        <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform">
+                        {/* Ticket Card - Adjusted rotation */}
+                        <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-300">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-3xl"></div>
                             
                             {/* Ticket Notches */}
@@ -210,7 +209,7 @@ const HeroSection = () => {
                         </div>
 
                         {/* Countdown Timer */}
-                        <div className="mt-8 bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                        <div className="mt-8 bg-white rounded-2xl p-6 shadow-lg border border-gray-100 reltive z-10">
                             <p className="text-sm text-gray-500 mb-4 text-center uppercase tracking-wider">Event Starts In</p>
                             <div className="grid grid-cols-4 gap-4">
                                 {Object.entries(timeLeft).map(([unit, value]) => (
@@ -228,6 +227,36 @@ const HeroSection = () => {
                     </motion.div>
                 </div>
             </div>
+
+            {/* Scroll Down Button with Rotating Text */}
+            <motion.a 
+                href="#events"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1, duration: 0.8 }}
+                className="absolute bottom-12 left-[48%] -translate-x-1/2 translate-y-1/2 z-20 group cursor-pointer hidden md:block"
+            >
+                <div className="relative flex items-center justify-center w-48 h-48">
+                    {/* Rotating Text */}
+                    <div className="absolute inset-0 animate-spin-slow group-hover:animate-spin-fast transition-all duration-300">
+                        <svg className="w-full h-full" viewBox="0 0 100 100">
+                            <defs>
+                                <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+                            </defs>
+                            <text className="text-[10px] font-bold fill-black uppercase tracking-widest">
+                                <textPath xlinkHref="#circle" startOffset="0%">
+                                    Scroll • Down • Scroll • Down •
+                                </textPath>
+                            </text>
+                        </svg>
+                    </div>
+
+                    {/* Central Button */}
+                    <div className="w-24 h-24 rounded-full bg-black flex items-center justify-center shadow-[0_0_20px_rgba(57,255,20,0.4)] transition-transform group-hover:scale-110 duration-300 z-10">
+                        <ArrowDown className="w-10 h-10 text-[#39FF14]" />
+                    </div>
+                </div>
+            </motion.a>
         </section>
     );
 };

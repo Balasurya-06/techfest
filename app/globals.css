@@ -7,6 +7,8 @@
   --font-inter: 'Inter', sans-serif;
 
   --animate-flicker: flicker 2s infinite;
+  --animate-spin-slow: spin-slow 10s linear infinite;
+  --animate-spin-fast: spin-slow 3s linear infinite;
 
   @keyframes flicker {
 
@@ -28,6 +30,16 @@
     65%,
     69.999% {
       opacity: 0.4;
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
     }
   }
 }
