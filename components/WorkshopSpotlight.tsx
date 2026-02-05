@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 const WorkshopSpotlight = () => {
     return (
@@ -13,9 +14,20 @@ const WorkshopSpotlight = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h3 className="text-xl font-medium text-gray-600 border-b-2 border-gray-900 pb-2 inline-block">
+                        <h3 className="text-xl font-medium text-gray-600 border-b-2 border-gray-900 pb-2 inline-block mb-8">
                             Featured Workshop
                         </h3>
+                        <div className="relative group rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform transition-all duration-500 hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]">
+                            <Image 
+                                src="/workshop-poster.jpg"
+                                alt="Agentic AI Workshop Poster"
+                                width={600}
+                                height={800}
+                                className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                priority
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        </div>
                     </motion.div>
 
                     {/* Right Side - Content */}

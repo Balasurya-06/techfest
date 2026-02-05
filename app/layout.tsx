@@ -13,36 +13,36 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-  title: "Tech Fest 2k26 | National Level Symposium CBE, Tamil Nadu | CSE Dept Karpagam | Metaverse",
-  description: "Join Tech Fest 2k26, the premier National Level Symposium in CBE, Tamil Nadu. Hosted by the CSE Department at Karpagam Academy of Higher Education (KAHE) in association with the Metaverse Association. Featuring top-tier technical events, hackathons, and workshops.",
-  applicationName: "Tech Fest 2k26",
+  title: "TechFest 2K26 | National Technical Symposium | Karpagam CSE Coimbatore Feb 12",
+  description: "Join TechFest 2K26 at Karpagam Academy, Coimbatore on Feb 12, 2026. National symposium with Agentic AI workshop, coding challenges, project expo & prizes. Register now for ₹200 Tech Pass!",
+  applicationName: "TechFest 2K26",
   keywords: [
-    "Tech Fest 2k26",
+    "TechFest 2K26",
+    "tech fest 2k26 Karpagam",
+    "technical symposium Coimbatore",
+    "Agentic AI workshop",
+    "coding competition Tamil Nadu",
     "National Level Symposium",
-    "CBE, Tamil Nadu",
     "CSE Department",
     "Karpagam",
     "Metaverse",
-    "Top SEO Ranking",
     "Symposium in Coimbatore",
     "Karpagam Academy of Higher Education",
     "KAHE CSE",
     "Metaverse Association",
     "TechFest 2026",
     "Engineering Events Coimbatore",
-    "College Fests in Coimbatore 2026",
     "Hackathon 2026",
     "Paper Presentation",
     "Project Expo",
-    "AI Workshops",
-    "Student Symposium"
+    "AI Workshops"
   ],
   authors: [{ name: "Metaverse Association Team" }, { name: "Dept of CSE, KAHE" }],
   creator: "Metaverse Association",
   publisher: "Karpagam Academy of Higher Education",
   metadataBase: new URL('https://techfest2k26.vercel.app'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://techfest2k26.vercel.app/',
   },
   robots: {
     index: true,
@@ -58,23 +58,23 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://techfest2k26.vercel.app",
-    title: "Tech Fest 2k26 | National Level Symposium CBE, Tamil Nadu | Karpagam CSE",
-    description: "Experience Tech Fest 2k26, the ultimate National Level Symposium in CBE, Tamil Nadu. Organized by the CSE Department at Karpagam & Metaverse Association.",
-    siteName: "Tech Fest 2k26",
+    url: "https://techfest2k26.vercel.app/",
+    title: "TechFest 2K26 | Karpagam CSE National Tech Symposium",
+    description: "Experience AI workshops, Tech Coders, Dreams in Digital & more at TechFest 2K26. Feb 12, Coimbatore. Register today!",
+    siteName: "TechFest 2K26",
     images: [
       {
-        url: "/metaverse-logo.png", // Ideally update this to a dedicated banner image in future
+        url: "/metaverse-logo.png", // Replaced with logo as valid image, user suggested og-image.jpg but it does not exist
         width: 1200,
         height: 630,
-        alt: "Tech Fest 2K26 - National Level Technical Symposium",
+        alt: "TechFest 2K26 - National Level Technical Symposium",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tech Fest 2k26 | National Level Symposium CBE | CSE Dept Karpagam",
-    description: "Join Tech Fest 2k26 at Karpagam (KAHE), the top National Level Symposium in CBE, Tamil Nadu. Organized by CSE Dept & Metaverse Association.",
+    title: "TechFest 2K26 | Karpagam CSE National Tech Symposium",
+    description: "Experience AI workshops, Tech Coders, Dreams in Digital & more at TechFest 2K26. Feb 12, Coimbatore. Register today!",
     images: ["/metaverse-logo.png"],
     creator: "@kahe_official",
   },
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
   },
   category: "technology",
   verification: {
-    google: "PLACEHOLDER_VERIFICATION_CODE", // Add your Google Search Console verification code here
+    google: "PLACEHOLDER_VERIFICATION_CODE",
     yandex: "yandex",
     yahoo: "yahoo",
     other: {
